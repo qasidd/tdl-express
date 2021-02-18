@@ -5,8 +5,18 @@ const { Schema, model } = mongoose;
 const { DB_URL, DB_NAME } = require('../config/CONSTS.json');
 
 const tdlSchema = new Schema({
-    title: { type: String, required: true },
-    completed: Boolean
+    title: {
+        type: String, 
+        required: true 
+    },
+    completed: {
+        type: Boolean,
+        default: false
+    },
+    dateAdded: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const tdl = model('tdl', tdlSchema);

@@ -23,6 +23,16 @@ router.get("/read/:id", (req, res, next) => {
     })
 });
 
+router.get("/read/getCompleted", (req, res, next) => {
+    TDL.find({ completed: true }, (err, results) => {
+        if (err) {
+            next(err);
+        } else {
+            res.send(results);
+        }
+    })
+});
+
 router.delete("/delete/:id", (req, res, next) => {
     TDL.findByIdAndDelete(req.params.id, (err) => {
         if (err) {
@@ -33,11 +43,7 @@ router.delete("/delete/:id", (req, res, next) => {
 });
 
 router.post("/create", (req, res, next) => {
-    const body = {
-        "title": req.body.title,
-        "completed": false
-    }
-    const item = new TDL(body);
+    const item = new TDL(req.body);
 
     item.save()
         .then((result) => {
