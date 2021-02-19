@@ -1,4 +1,5 @@
 {
     "DB_URL": "localhost:27017",
-    "DB_NAME": "tdl"
+    "DB_NAME": "tdl",
+    "TDL_URL": "/tdl"
 }
