@@ -1,3 +1,3 @@
 # tdl-express
 
-Backend for [tdl-react](https://github.com/qasidd/tdl-react)
+Back-end for [tdl-react](https://github.com/qasidd/tdl-react)
